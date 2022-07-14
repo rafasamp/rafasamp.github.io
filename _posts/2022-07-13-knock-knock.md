@@ -9,6 +9,8 @@ header:
   overlay_image: /assets/images/header/knock-knock.png
   overlay_filter: 0.5
   caption: "A beautiful day out in New Hampshire"
+  teaser: /assets/images/header/knock-knock.png
+classes: wide
 ---
 
 I thought it was a good idea to make my first post here into a quick statement into what exactly I am doing with this site. From personal experience, asking the *Five W's* always yields good results.

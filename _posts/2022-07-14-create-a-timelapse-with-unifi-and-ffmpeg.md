@@ -11,6 +11,10 @@ header:
   overlay_image: /assets/images/header/create-a-timelapse-with-unifi-and-python.png
   overlay_filter: 0.5
   caption: "Python script to retrieve a snapshot from Unifi"
+  teaser: /assets/images/header/create-a-timelapse-with-unifi-and-python.png
+toc: true
+toc_label: Contents
+toc_sticky: true
 ---
 
 I find timelapses fascinating. Although Unifi has a great software suite it pains me that they do not make their snapshot API available allowing users to export a timelapse straight from the Protect portal. This leaves us with the only option to hacking a solution for ourselves which is what I go through in this post.
@@ -19,6 +23,8 @@ I find timelapses fascinating. Although Unifi has a great software suite it pain
 
 **Be warned!** Enabling anonymous snapshots allows anyone with access to your security network to retrieve a JPEG of the live feed of the camera anonymously. **Do not do this if your camera network is not properly secured** 
 {: .notice--danger}
+
+### Configuring Unifi Protect
 
 In order for our Python script to retrieve a live snapshot from the Unifi camera we need to enable anonymous snapshots. You may do so using the following steps [provided by JJJ](https://jjj.blog/2019/12/get-snap-jpeg-from-unifi-protect-cameras/):
 
@@ -34,13 +40,17 @@ In order for our Python script to retrieve a live snapshot from the Unifi camera
 10. Enable the “Anonymous Snapshot” on the camera
 11. From there you should be able to access http://your.camera.ip.address/snap.jpeg
 
-## Capturing Periodic Snapshots with Python
+## Capturing Periodic Snapshots
+
+### Python Script
 
 The next step in the process is to periodically access the camera and retrieve a live snapshot. I have created a simple Python script to aid in the process:
 
 <script src="https://gist.github.com/rafasamp/1514cd289bfc0c12025034da06bde80a.js"></script>
 
 Every time the script is run, it will place a snapshot in a subfolder with the camera name and current time in ISO8601 format [(hi /r/8601!)](https://www.reddit.com/r/ISO8601/)
+
+### Scheduling The Script
 
 I have this currently running on a Raspberry Pi 2 via a cron job every 30 minutes. This means that at 60FPS each day cycle will yield one second of smooth timelapse goodness. If you've never created a cron job before, I use the excellent tool at [crontab.guru](https://crontab.guru/)
 
@@ -58,7 +68,9 @@ This will open the VIM or NANO editor depending on your system, hit the `i` key 
 
 To verify, enter `crontab -l` and you should see your scheduled job show up. Soon enough (precisely every hour and every 30 minutes on the hour in this case) a screenshot will be written to the folder. Great! Now all that's needed is to leave this running for a good long while and we're one step closer to making a proper timelapse.
 
-## Generating a Timelapse with FFMPEG
+## Generating a Timelapse
+
+### Making a Video
 
 This is arguably the easiest step in the process since all you need is to navigate to the directory where your screenshots are and entering the following line:
 

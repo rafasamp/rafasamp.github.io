@@ -128,9 +128,6 @@ defaults:
       comments: true
       share: true
       related: true
-      classes: wide
-      # toc: true
-      # toc_label: Contents
   # _pages
   - scope:
       path: "_pages"
