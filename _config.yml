@@ -71,9 +71,10 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Rafael Sampaio"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Playing in the cloud for 14 years and loving music for over 30"
+  name      : "Rafael Sampaio"
+  avatar    : "/assets/images/bio-photo.jpg"
+  bio       : "Playing in the cloud for 14 years and loving music for over 30"
+  location  : "Boston, MA"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -90,6 +91,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/rafs_samp"
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit"
+      url: "https://www.reddit.com/user/rafaelsampaio/"
 
 footer:
   links:
@@ -105,6 +109,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/rafs_samp"
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit"
+      url: "https://www.reddit.com/user/rafaelsampaio/"
 
 defaults:
   # _posts
